@@ -1,0 +1,29 @@
+// C++ code
+//
+int wiper=A0,led=6,r=9,g=10,b=11,blink=500;
+unsigned long t=0;
+bool ledst=LOW;
+
+void setup(){
+  pinMode(led, OUTPUT);
+  pinMode(r, OUTPUT);
+  pinMode(g, OUTPUT);
+  pinMode(b, OUTPUT);
+}
+void loop(){
+  int wp=analogRead(wiper);
+  unsigned long time=millis();
+  blink=map(wp, 0, 1023, 100, 1000);
+  if(time-t>=blink){
+    t=time;
+    ledst=!ledst;
+    digitalWrite(led, ledst);
+  }
+  int green=map(wp, 0, 1023, 255, 0);
+  int red=map(wp, 0, 1023, 0, 255);
+  int blue=map(wp, 0, 1023, 128, 255);
+  analogWrite(g, green);
+  analogWrite(r, red);
+  analogWrite(b, blue);
+  delay(10);
+}
