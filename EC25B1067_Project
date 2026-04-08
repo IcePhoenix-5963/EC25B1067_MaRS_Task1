@@ -1,1 +1,34 @@
+// C++ code
+//
+int lpin = 12;
+int bpin = 7;
+unsigned long start;
+bool on=false;
 
+void setup(){
+  pinMode(lpin, OUTPUT);
+  pinMode(bpin, INPUT_PULLUP);
+  Serial.begin(9600);
+  randomSeed(analogRead(A0));
+}
+
+void loop(){
+  int wait = random(1000, 7000);
+  delay(wait);
+  digitalWrite(lpin, HIGH);
+  start=millis();
+  on=true;
+  while(on){
+    if (digitalRead(bpin)==LOW){
+      unsigned long reactime=millis()-start;
+      Serial.print("Reaction Time: ");
+      Serial.print(reactime);
+      Serial.println(" ms");
+      digitalWrite(lpin, LOW);
+      on=false;
+      Serial.print("Resetting...");
+      delay(1000);
+      Serial.print("Start!\n");
+    }
+  }
+}
