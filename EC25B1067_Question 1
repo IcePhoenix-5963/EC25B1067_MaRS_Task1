@@ -1,0 +1,38 @@
+// C++ code
+//
+unsigned long t1=0;
+unsigned long t2=0;
+unsigned long t3=0;
+bool s1=LOW;
+bool s2=LOW;
+bool s3=LOW;
+void setup()
+{
+  pinMode(8, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+  digitalWrite(8, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+}
+
+void loop()
+{
+  unsigned long x=millis();
+  if(x-t3>=500){
+    s3=!s3;
+    digitalWrite(13, s3);
+    t3=x;
+  }
+  if(x-t2>=1000){
+    s2=!s2;
+    digitalWrite(12, !s2);
+    t2=x;
+  }
+  if(x-t1>=1500){
+    s1=!s1;
+    digitalWrite(8, !s1);
+    t1=x;
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}
