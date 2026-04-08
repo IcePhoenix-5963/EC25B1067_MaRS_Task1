@@ -1,6 +1,11 @@
-EC25B1067_SIDDHARTH S_MaRS_Task#1_Recruitment. The process uses LEDs and resistors and arduino uno to blink LEDs at random times and user uses a pushbutton to turn
+EC25B1067_SIDDHARTH S_MaRS_Task#1_Recruitment.
+The process uses LEDs and resistors and arduino uno to blink LEDs at random times and user uses a pushbutton to turn
 off the LED, thus recording the reaction time of the user.
 The circuit additionally RECORDS THE BEST REACTION TIME of the user and compares it with current reaction.
 Moreover, The circuit alerts the user if the user clicks early, PREVENTING CHEATING.
+Componenets used: 
+1. Pushbutton: Takes the input from the user to stop the timer and record the user's reaction time
+2. LED: Gives the signal for the user to push button and starts the timer too
+3. Resistor: Prevents LED from blowing up due to high current
 Tinkercad link:
 https://www.tinkercad.com/things/iboT4lS0lol-ec25b1067projectsmart-reaction-time-game?sharecode=WbymODhPCAfJGg9LZCqUpnTNGmos18QMhOcSXOPRzFg
