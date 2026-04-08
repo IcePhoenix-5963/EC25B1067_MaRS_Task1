@@ -24,8 +24,8 @@ void loop(){
   digitalWrite(lpin, HIGH);
   start = millis();
   on = true;
-  while(on) {
-    if (digitalRead(bpin) == LOW) {
+  while(on){
+    if (digitalRead(bpin) == LOW){
       reactime = millis() - start;
       Serial.print("Your Time: ");
       Serial.print(reactime);
